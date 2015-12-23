@@ -16,27 +16,27 @@
     var menuItems = [
       {
         title: 'About',
-        href: '#',
+        href: '#/about',
         colorHex: '21909E'
       },
       {
-        title: 'Schedule',
-        href: '#',
+        title: 'Typography',
+        href: '#/typography',
         colorHex: 'A53434'
       },
       {
-        title: 'Videos',
-        href: '#',
+        title: 'Purpose',
+        href: '#/purpose',
         colorHex: '455A64'
       },
       {
-        title: 'Onsite',
-        href: '#',
+        title: 'Technology',
+        href: '#/technology',
         colorHex: '009688'
       },
       {
-        title: 'Offsite',
-        href: '#',
+        title: 'Credits',
+        href: '#/credits',
         colorHex: '455A64'
       }
     ];

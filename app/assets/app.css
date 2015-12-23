@@ -74,6 +74,12 @@ md-list .md-button {
   margin-bottom: 100px;
 }
 
+@media (min-width: 1024px) {
+  #content {
+    min-width: 1024px;
+  }
+}
+
 #content .break-padding {
   margin-left: -40px;
   margin-left: -40px;

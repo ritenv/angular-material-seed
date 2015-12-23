@@ -51,8 +51,10 @@
       <h1 flex>Angular Material Template</h1>
       <div class="menu">
         <md-button
+          ng-href="{{menuItem.href}}"
           ng-repeat="menuItem in menu.menuItems"
-          ng-click="menu.setActiveMenu(menuItem)">
+          ng-click="menu.setActiveMenu(menuItem)"
+          ng-class="{active: menu.selected.title === menuItem.title}">
             {{menuItem.title}}
         </md-button>
       </div>
@@ -60,16 +62,10 @@
     
     <md-content flex id="content" class="md-whiteframe-z2" ng-controller="UserController as ul">
       <div class="break-padding">
-        <h2 class="light">About</h2>
+        <h2 class="light">{{menu.selected.title}}</h2>
       </div>
-      <md-icon md-svg-icon="{{ul.selected.avatar}}" class="avatar"></md-icon>
-      <h2>{{ul.selected.name}}</h2>
-      <p>{{ul.selected.content}}</p>
-
-      <md-button class="contact" md-no-ink ng-click="ul.showContactOptions($event)" aria-label="Contact User">
-        <md-tooltip>Contact {{ ul.selected.name }}</md-tooltip>
-        <md-icon md-svg-icon="share"></md-icon>
-      </md-button>
+      
+      <div ng-view></div>
     </md-content>
 
   </div>
@@ -77,6 +73,7 @@
     <script src="./bower_components/angular/angular.js"></script>
     <script src="./bower_components/angular-animate/angular-animate.js"></script>
     <script src="./bower_components/angular-aria/angular-aria.js"></script>
+    <script src="./bower_components/angular-route/angular-route.js"></script>
     <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
 
     <script src="./src/users/Users.js"></script>
@@ -87,10 +84,15 @@
     <script src="./src/menu/MenuController.js"></script>
     <script src="./src/menu/MenuService.js"></script>
 
+    <script src="./src/about/About.js"></script>
+    <script src="./src/about/AboutRoute.js"></script>
+    <script src="./src/about/AboutController.js"></script>
+    <script src="./src/about/AboutService.js"></script>
+
     <script type="text/javascript">
 
           angular
-              .module('starterApp', ['ngMaterial', 'users', 'menu'])
+              .module('starterApp', ['ngMaterial', 'users', 'menu', 'about'])
               .config(function($mdThemingProvider, $mdIconProvider){
 
                   $mdIconProvider
