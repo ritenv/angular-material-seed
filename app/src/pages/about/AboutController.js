@@ -33,7 +33,7 @@
         var user = self.selected;
 
         return $mdBottomSheet.show({
-          templateUrl: './src/about/view/share.html',
+          templateUrl: './src/pages/about/view/share.html',
           controller: [ '$mdBottomSheet', ContactPanelController],
           controllerAs: "cp",
           bindToController : true,

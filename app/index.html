@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
     <link rel="stylesheet" href="assets/app.css"/>
 
+    <!-- Remove this when building your app -->
+    <link rel="stylesheet" href="assets/demo.css"/>
+
     <style type="text/css">
         /**
          * Hide when Angular is not yet loaded and initialized
@@ -25,31 +28,37 @@
 
   <body ng-app="starterApp" layout="row" ng-cloak ng-controller="MenuController as menu">
 
-  <!-- <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
-                md-component-id="left"
-                md-is-locked-open="$mdMedia('gt-sm')">
+  <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
+                md-component-id="left">
 
     <md-toolbar class="md-whiteframe-z1">
-      <h1>Users</h1>
+      <h1 class="auto">Menu</h1>
     </md-toolbar>
 
     <md-list>
-      <md-list-item ng-repeat="it in ul.users">
-          <md-button ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
-            <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
-            {{it.name}}
-          </md-button>
+      <md-list-item ng-repeat="menuItem in menu.menuItems">
+        <md-button
+          ng-href="{{menuItem.href}}"
+          ng-click="menu.setActiveMenu(menuItem, true)"
+          ng-class="{'active md-raised': menu.selected.title === menuItem.title}">
+            {{menuItem.title}}
+        </md-button>
       </md-list-item>
     </md-list>
 
-  </md-sidenav> -->
+  </md-sidenav>
 
 
-  <div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
+  <div flex layout="column" tabIndex="-1" role="main" class="">
 
     <md-toolbar layout="row" class="md-whiteframe-z1" id="header-toolbar" style="background-color: #{{menu.headerColor}}">
-      <h1 flex>Angular Material Template</h1>
-      <div class="menu">
+      <div flex hide-gt-sm>
+        <md-button class="menu-btn" ng-click="menu.toggleView()" aria-label="Show Menu">
+          <md-icon md-svg-icon="menu" ></md-icon>
+        </md-button>
+      </div>
+      <h1 flex-gt-sm>Angular Material Template</h1>
+      <div class="menu" hide-sm hide-xs>
         <md-button
           ng-href="{{menuItem.href}}"
           ng-repeat="menuItem in menu.menuItems"
@@ -60,12 +69,12 @@
       </div>
     </md-toolbar>
     
-    <md-content flex id="content" class="md-whiteframe-z2" ng-controller="UserController as ul">
+    <md-content flex id="content" class="md-whiteframe-z2">
       <div class="break-padding">
         <h2 class="light">{{menu.selected.title}}</h2>
       </div>
       
-      <div ng-view></div>
+      <div ng-view class="view-transition"></div>
     </md-content>
 
   </div>
@@ -76,23 +85,27 @@
     <script src="./bower_components/angular-route/angular-route.js"></script>
     <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
 
-    <script src="./src/users/Users.js"></script>
+    <!-- <script src="./src/users/Users.js"></script>
     <script src="./src/users/UserController.js"></script>
-    <script src="./src/users/UserService.js"></script>
+    <script src="./src/users/UserService.js"></script> -->
 
     <script src="./src/menu/Menu.js"></script>
     <script src="./src/menu/MenuController.js"></script>
     <script src="./src/menu/MenuService.js"></script>
 
-    <script src="./src/about/About.js"></script>
-    <script src="./src/about/AboutRoute.js"></script>
-    <script src="./src/about/AboutController.js"></script>
-    <script src="./src/about/AboutService.js"></script>
+    <script src="./src/pages/about/About.js"></script>
+    <script src="./src/pages/about/AboutRoute.js"></script>
+    <script src="./src/pages/about/AboutController.js"></script>
+    <script src="./src/pages/about/AboutService.js"></script>
+
+    <script src="./src/pages/purpose/Purpose.js"></script>
+    <script src="./src/pages/purpose/PurposeRoute.js"></script>
+    <script src="./src/pages/purpose/PurposeController.js"></script>
 
     <script type="text/javascript">
 
           angular
-              .module('starterApp', ['ngMaterial', 'users', 'menu', 'about'])
+              .module('starterApp', ['ngMaterial', 'ngAnimate', 'menu', 'about', 'purpose'])
               .config(function($mdThemingProvider, $mdIconProvider){
 
                   $mdIconProvider

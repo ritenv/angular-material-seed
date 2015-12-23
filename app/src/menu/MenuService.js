@@ -20,25 +20,30 @@
         colorHex: '21909E'
       },
       {
-        title: 'Typography',
-        href: '#/typography',
+        title: 'Purpose',
+        href: '#/purpose',
         colorHex: 'A53434'
       },
       {
-        title: 'Purpose',
-        href: '#/purpose',
-        colorHex: '455A64'
-      },
-      {
-        title: 'Technology',
-        href: '#/technology',
-        colorHex: '009688'
-      },
-      {
-        title: 'Credits',
-        href: '#/credits',
-        colorHex: '455A64'
+        title: 'GitHub',
+        href: 'http://github.com/ritenv/angular-material-template',
+        colorHex: 'A53434'
       }
+      // {
+      //   title: 'Purpose',
+      //   href: '#/purpose',
+      //   colorHex: '455A64'
+      // },
+      // {
+      //   title: 'Technology',
+      //   href: '#/technology',
+      //   colorHex: '009688'
+      // },
+      // {
+      //   title: 'Credits',
+      //   href: '#/credits',
+      //   colorHex: '455A64'
+      // }
     ];
 
     // Promise-based API

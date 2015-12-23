@@ -7,9 +7,14 @@
   function AboutRoutes($routeProvider, $locationProvider, $q){
     $routeProvider
       .when('/about', {
-        templateUrl: '/src/about/view/content.html',
+        templateUrl: '/src/pages/about/view/content.html',
         controller: 'AboutController',
-        controllerAs: 'about'
+        controllerAs: 'page'
+      })
+      .when('/', {
+        templateUrl: '/src/pages/about/view/content.html',
+        controller: 'AboutController',
+        controllerAs: 'page'
       });
   }
 

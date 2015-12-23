@@ -3,7 +3,7 @@
   angular
        .module('menu')
        .controller('MenuController', [
-          'menuService', '$timeout', '$mdInkRipple', '$log', '$q',
+          'menuService', '$location', '$mdSidenav', '$mdBottomSheet', '$mdInkRipple', '$log', '$q',
           MenuController
        ]);
 
@@ -14,11 +14,13 @@
    * @param avatarsService
    * @constructor
    */
-  function MenuController( menuService, $timeout, $mdInkRipple, $log, $q) {
+  function MenuController( menuService, $location, $mdSidenav, $mdBottomSheet, $mdInkRipple, $log, $q) {
     var self = this;
+    var currentPage = $location.path();
 
     self.menuItems        = [ ];
     self.setActiveMenu  = setActiveMenu;
+    self.toggleView = toggleView;
 
     // Load all menu items
 
@@ -31,17 +33,40 @@
               center: false,
               dimBackground: false
             });
-
-            setActiveMenu(menuItems[0]);
+            
+            if (currentPage && currentPage !== '/') {
+              angular.forEach(menuItems, function(menuItem) {
+                if (menuItem.href.indexOf(currentPage) !== -1) {
+                  setActiveMenu(menuItem);
+                }
+              });
+            } else {
+              setActiveMenu(menuItems[0]);
+            }
           });
 
     // *********************************
     // Internal methods
     // *********************************
 
-    function setActiveMenu(menuItem, colorHex) {
+    function setActiveMenu(menuItem, toggleMenu) {
       self.selected = menuItem;
       self.headerColor = menuItem.colorHex;
+      if (toggleMenu) {
+        toggleView();
+      }
+    }
+
+    /**
+     * First hide the bottomsheet IF visible, then
+     * hide or Show the 'left' sideNav area
+     */
+    function toggleView() {
+      var pending = $mdBottomSheet.hide() || $q.when(true);
+
+      pending.then(function(){
+        $mdSidenav('left').toggle();
+      });
     }
   }
 

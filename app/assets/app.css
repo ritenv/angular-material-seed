@@ -7,6 +7,13 @@ html, body {
   background-color: #F5F5F5;
 }
 
+a {
+  color: #106CC8;
+  text-decoration: none;
+  font-weight: 400;
+  border-bottom: 1px solid rgba(64, 84, 178, 0.25);
+}
+
 /* Toolbar area */
 
 md-toolbar#header-toolbar {
@@ -25,16 +32,25 @@ md-toolbar#header-toolbar h1 {
   margin: 10px;
 }
 
+.menu-btn {
+  background-color: transparent;
+  border: none;
+  height: 38px;
+  margin: 16px;
+  min-width: 36px;
+}
+
 .menu .md-button {
   padding: 4px 12px;
   margin: 0;
   min-width: 0;
   border-radius: 0;
+  border-bottom: 2px solid transparent;
 }
   .menu .md-button.active {
     border-bottom: 2px solid #fff;
   }
-  .menu .md-button:hover {
+  .menu a.md-button:hover {
     background-color: transparent;
   }
 
@@ -73,6 +89,10 @@ md-list .md-button {
   padding-top: 5px;
   margin-bottom: 100px;
 }
+#content [ng-view] {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
 
 @media (min-width: 1024px) {
   #content {
@@ -80,9 +100,11 @@ md-list .md-button {
   }
 }
 
-#content .break-padding {
-  margin-left: -40px;
-  margin-left: -40px;
+@media (min-width: 1024px) {
+  #content .break-padding {
+    margin-left: -40px;
+    margin-left: -40px;
+  }
 }
 
 #content h2:first-child {
@@ -90,7 +112,7 @@ md-list .md-button {
   letter-spacing: -1px;
   font-weight: 300;
   margin-top: -120px;
-  margin-bottom: 80px;
+  margin-bottom: 57px;
 }
 
 #content h2.light {
@@ -134,7 +156,7 @@ md-button.menuBtn > md-icon {
 #content img {
   display: block;
   height: auto;
-  max-width: 500px;
+  max-width: 100%;
 }
 
 /* Utils */
@@ -149,6 +171,9 @@ md-toolbar h1 {
   font-size: 1.250em;
   font-weight: 400;
 }
+  md-toolbar h1.auto {
+    margin: auto;
+  }
 
 .avatar {
   position: relative;
