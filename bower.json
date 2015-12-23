@@ -1,8 +1,8 @@
 {
-  "name": "angular-material-starter",
-  "description": "A starter project for AngularJS Material",
-  "version": "0.0.2",
-  "homepage": "https://github.com/angular/material-start",
+  "name": "angular-material-template",
+  "description": "A starter project for AngularJS Material Design",
+  "version": "0.0.1",
+  "homepage": "https://github.com/ritenv/angular-material-template",
   "license": "MIT",
   "private": true,
   "dependencies": {

@@ -1,33 +1,37 @@
 'use strict';
 
-var UserList    = require('../pages/UserList.js');
-var UserDetails = require('../pages/UserDetails.js');
-var ContactUser = require('../pages/ContactUser.js');
+var Menu    = require('../components/Menu.js');
+var Share = require('../components/Share.js');
+var BottomSheetInstance = require('../components/BottomSheetInstance.js');
 
 describe('my app', function() {
 
-  var users   = new UserList();
-  var details = new UserDetails();
-  var contact = new ContactUser();
+  var menu   = new Menu();
+  var share = new Share();
+  var sheet = new BottomSheetInstance();
 
   beforeEach(function() {
-    users.loadAll();
+    menu.loadAbout();
   });
 
-  it('should load a list of users', function() {
-    expect(users.count()).toBeGreaterThan(1);
+  it('should load all 3 menu items', function() {
+    expect(menu.countNavLinks()).toBeGreaterThan(2);
+  });
+
+  it('should have the header ripple attached', function() {
+    expect(menu.rippleAttached()).toBeTruthy();
   });
 
   describe('selecting a user', function() {
 
     beforeEach(function() {
-      return details.contactUser();
+      return share.clickContact();
     });
 
     it('should set focus on first button in the bottomsheet view', function() {
-      expect( contact.buttons().count() ).toBe(4);
-      expect( contact.buttons().first().getText() ).toEqual( 'PHONE' );
-      expect( contact.focusedButton().getText() ).toEqual( 'PHONE' );
+      expect( sheet.buttons().count() ).toBe(4);
+      expect( sheet.buttons().first().getText() ).toEqual( 'PHONE' );
+      expect( sheet.focusedButton().getText() ).toEqual( 'PHONE' );
     });
 
   });

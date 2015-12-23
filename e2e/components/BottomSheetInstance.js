@@ -1,4 +1,4 @@
-var ContactUser = function() {
+var BottomSheetInstance = function() {
 
   this.load = function() {
     return browser.get("/#");
@@ -18,5 +18,5 @@ var ContactUser = function() {
 
 };
 
-module.exports = ContactUser;
+module.exports = BottomSheetInstance;
 
