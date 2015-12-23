@@ -1,22 +1,23 @@
 # Angular Material-Start
 
-This Material **start*** project is a *seed* for AngularJS Material applications. The project contains a sample AngularJS application and is pre-configured to install the Angular framework and a bunch of development and testing tools for instant web development gratification.
+This Material **start*** project is a *seed* for AngularJS Material applications. 
+
+This starter kit is greatly inspired and built upon the original starter app provided by <code>angular/material-start</code> located at <a href="https://github.com/angular/material-start" target="_blank">angular/material-start</a>.
+
+The project contains a sample AngularJS application and is pre-configured to install the Angular framework and a bunch of development and testing tools for instant web development gratification.
 
 This sample application is intended to be useful as both a learning tool and a skeleton application
-for a typical [AngularJS Material](http://material.angularjs.org/) web app: comprised of a Side navigation
+for a typical [AngularJS Material](http://material.angularjs.org/) web app: comprised of a Top navigation
 area and a content area. You can use it to quickly bootstrap your AngularJS webapp projects and dev
 environment for these projects.
 
-### What is the UX?
+### How does it look?
 
-Below is a snapshot of the Starter-App with the Users' *master-detail* view. Also shown is the user
-experience that will is displayed for smaller device sizes. The responsive layout changes to hide
-the user list, reveal the **menu** button. In the User Details view, you may also click the
-**share** button  to show the Contact &lt;User&gt; bottom sheet view.
+Below is a screenshot of the Starter-App:
 
 <br/>
 
-![material-starter-ux2](https://cloud.githubusercontent.com/assets/210413/6448551/70864488-c0e0-11e4-8767-c4e1e4c2f343.png)
+![material-ui](material-ui.jpg)
 
 <br/>
 
@@ -225,3 +226,11 @@ For more information on Angular Material, check out https://material.angularjs.o
 [karma]: http://karma-runner.github.io
 [travis]: https://travis-ci.org/
 [http-server]: https://github.com/nodeapps/http-server
+
+## Credits
+
+This app was derived from the base app at <a href="https://github.com/angular/material-start" target="_blank">angular/material-start</a>, and derives a lot of its code from it. The primary target of this app is to enhance the UI to match the Material Design specification.
+
+## Background
+
+**Angular Material Template** is being developed by [@ritenv](http://twitter.com/@ritenv) as a hobby project. If you have any ideas, suggestions or things you'd like to see in this app, PM me directly at [@ritenv](http://twitter.com/@ritenv).
