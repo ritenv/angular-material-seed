@@ -26,7 +26,7 @@
       },
       {
         title: 'GitHub',
-        href: 'http://github.com/ritenv/angular-material-template',
+        href: 'http://github.com/ritenv/angular-material-seed',
         colorHex: 'A53434'
       }
       // {
