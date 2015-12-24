@@ -1,7 +1,7 @@
 html, body {
   font-family: 'Roboto', sans-serif;
   font-size:14px;
-  height:100%;
+  height:auto;
   margin: 0px;
   padding: 0px;
   background-color: #F5F5F5;
@@ -101,13 +101,13 @@ md-list .md-button {
 }
 
 @media (min-width: 1024px) {
-  #content .break-padding {
+  #content .site-title {
     margin-left: -40px;
     margin-left: -40px;
   }
 }
 
-#content h2:first-child {
+#content .site-title h2:first-child {
   font-size: 3.3em;
   letter-spacing: -1px;
   font-weight: 300;

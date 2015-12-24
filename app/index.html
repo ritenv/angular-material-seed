@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" >
   <head>
-    <title>Angular Material - Starter App</title>
+    <title>Angular Material Seed</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,56 +28,56 @@
 
   <body ng-app="starterApp" layout="row" ng-cloak ng-controller="MenuController as menu">
 
-  <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
-                md-component-id="left">
+    <md-sidenav class="site-sidenav md-sidenav-left md-whiteframe-z2"
+                  md-component-id="left">
 
-    <md-toolbar class="md-whiteframe-z1">
-      <h1 class="auto">Menu</h1>
-    </md-toolbar>
+      <md-toolbar class="md-whiteframe-z1">
+        <h1 class="auto">Menu</h1>
+      </md-toolbar>
 
-    <md-list>
-      <md-list-item ng-repeat="menuItem in menu.menuItems">
-        <md-button
-          ng-href="{{menuItem.href}}"
-          ng-click="menu.setActiveMenu(menuItem, true)"
-          ng-class="{'active md-raised': menu.selected.title === menuItem.title}">
-            {{menuItem.title}}
-        </md-button>
-      </md-list-item>
-    </md-list>
+      <md-list>
+        <md-list-item ng-repeat="menuItem in menu.menuItems">
+          <md-button
+            ng-href="{{menuItem.href}}"
+            ng-click="menu.setActiveMenu(menuItem, true)"
+            ng-class="{'active md-raised': menu.selected.title === menuItem.title}">
+              {{menuItem.title}}
+          </md-button>
+        </md-list-item>
+      </md-list>
 
-  </md-sidenav>
+    </md-sidenav>
 
 
-  <div flex layout="column" tabIndex="-1" role="main" class="">
+    <div flex tabIndex="-1" role="main" class="">
 
-    <md-toolbar layout="row" class="md-whiteframe-z1" id="header-toolbar" style="background-color: #{{menu.headerColor}}">
-      <div flex hide-gt-sm>
-        <md-button class="menu-btn" ng-click="menu.toggleView()" aria-label="Show Menu">
-          <md-icon md-svg-icon="menu" ></md-icon>
-        </md-button>
-      </div>
-      <h1 flex-gt-sm>Angular Material Template</h1>
-      <div class="menu" hide-sm hide-xs>
-        <md-button
-          ng-href="{{menuItem.href}}"
-          ng-repeat="menuItem in menu.menuItems"
-          ng-click="menu.setActiveMenu(menuItem)"
-          ng-class="{active: menu.selected.title === menuItem.title}">
-            {{menuItem.title}}
-        </md-button>
-      </div>
-    </md-toolbar>
-    
-    <md-content flex id="content" class="md-whiteframe-z2">
-      <div class="break-padding">
-        <h2 class="light">{{menu.selected.title}}</h2>
-      </div>
+      <md-toolbar layout="row" class="md-whiteframe-z1" id="header-toolbar" style="background-color: #{{menu.headerColor}}">
+        <div flex hide-gt-sm>
+          <md-button class="menu-btn" ng-click="menu.toggleView()" aria-label="Show Menu">
+            <md-icon md-svg-icon="menu" ></md-icon>
+          </md-button>
+        </div>
+        <h1 flex-gt-sm>Angular Material Seed</h1>
+        <div class="menu" hide-sm hide-xs>
+          <md-button
+            ng-href="{{menuItem.href}}"
+            ng-repeat="menuItem in menu.menuItems"
+            ng-click="menu.setActiveMenu(menuItem)"
+            ng-class="{active: menu.selected.title === menuItem.title}">
+              {{menuItem.title}}
+          </md-button>
+        </div>
+      </md-toolbar>
       
-      <div ng-view class="view-transition"></div>
-    </md-content>
+      <md-content flex id="content" class="md-whiteframe-z2" md-scroll-y>
+        <div class="site-title">
+          <h2 class="light">{{menu.selected.title}}</h2>
+        </div>
+        
+        <div ng-view class="view-transition"></div>
+      </md-content>
 
-  </div>
+    </div>
 
     <script src="./bower_components/angular/angular.js"></script>
     <script src="./bower_components/angular-animate/angular-animate.js"></script>

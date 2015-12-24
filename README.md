@@ -1,14 +1,10 @@
-# Angular Material-Start
+# Angular Material Seed
 
 This Material **start*** project is a *seed* for AngularJS Material applications. 
 
-This starter kit is greatly inspired and built upon the original starter app provided by <code>angular/material-start</code> located at <a href="https://github.com/angular/material-start" target="_blank">angular/material-start</a>.
+The project contains a sample AngularJS application built on Google's Material Design specification, and is preset to install the AngularJS framework and a bunch of development and testing tools for instant web development gratification.
 
-The project contains a sample AngularJS application and is pre-configured to install the Angular framework and a bunch of development and testing tools for instant web development gratification.
-
-This sample application is intended to be useful as both a learning tool and a skeleton application
-for a typical [AngularJS Material](http://material.angularjs.org/) web app: comprised of a Top navigation
-area and a content area. You can use it to quickly bootstrap your AngularJS webapp projects and dev
+This sample application is intended to be useful as both a learning tool and a skeleton application for a typical [AngularJS Material](http://material.angularjs.org/) web app: comprised of a top navigation header area and a content area. You can use it to quickly bootstrap your AngularJS webapp projects and dev
 environment for these projects.
 
 ### How does it look?
@@ -19,54 +15,30 @@ Below is a screenshot of the Starter-App:
 
 ![material-ui](material-ui.png)
 
-<br/>
-
-This Starter app demonstrates how:
-
-*  Angular Material `layout` and `flex` options can easily configure HTML containers
-*  Angular Material components `<md-toolbar>`, `<md-sidenav>`, `<md-icon>` can be quickly used
-*  Custom controllers can use and show `<md-bottomsheet>` with HTML templates
-*  Custom controller can easily, programmatically open & close the SideNav component.
-*  Responsive breakpoints and `$mdMedia` are used
-*  Theming can be altered/configured using `$mdThemingProvider`
-*  ARIA features are supported by Angular Material and warnings can be used to improve accessibility.
-
 ## Getting Started
 
 #### Prerequisites
 
-You will need **git** to clone the material-start repository. You can get git from
+You will need **git** to clone the repository. You can get git from
 [http://git-scm.com/](http://git-scm.com/).
 
-We also use a number of node.js tools to initialize and test material-start. You must have node.js and
-its package manager (npm) installed.  You can get them from [http://nodejs.org/](http://nodejs.org/).
+We also use a number of node.js tools to initialize and test the project. You must have node.js and its package manager (npm) installed.  You can get them from [http://nodejs.org/](http://nodejs.org/).
 
-#### Clone material-start
+#### Clone The App
 
 To get you started you can simply clone `master` branch from the
-[Material-Start](https://github.com/angular/material-start) repository and install the dependencies:
+[Angular Material Seed](https://github.com/ritenv/angular-material-seed) repository and install the dependencies:
 
-> NOTE: The `master` branch contains the traditional, ES5 implementation familiar to Angular developers.
-
-Clone the material-start repository using [git][git]:
+Clone the repository using [git][git]:
 
 ```
-git clone https://github.com/angular/material-start.git
-cd material-start
+git clone https://github.com/ritenv/angular-material-seed.git
+cd angular-material-seed
 ```
 
-If you just want to start a new project without the material-start commit history then you can do:
+#### Installing Dependencies
 
-```bash
-git clone --depth=1 https://github.com/angular/material-start.git <your-project-name>
-```
-
-The `depth=1` tells git to only pull down one commit worth of historical data.
-
-#### Install Dependencies
-
-We have two kinds of dependencies in this project: tools and AngularJS framework code.  The tools help
-us manage and test the application.
+There are two kinds of dependencies in this project: tools and AngularJS framework code. The tools help us manage and test the application.
 
 * We get the tools we depend upon via `npm`, the [node package manager][npm].
 * We get the AngularJS code via `bower`, a [client-side code package manager][bower].
@@ -83,15 +55,9 @@ folders in your project.
 * `node_modules` - contains the npm packages for the tools we need
 * `app/bower_components` - contains the AngularJS framework files
 
-*Note that the `bower_components` folder would normally be installed in the root folder but
-material-start changes this location through the `.bowerrc` file.  Putting it in the app folder makes
-it easier to serve the files by a web server.*
-
 ### Run End-to-End Tests
 
-To run your e2e tests your should install and configure Protractor and the Selenium WebServer.
-These are already specified as npm dependencies within `package.json`. Simply run these
-terminal commands:
+To run your e2e tests your should install and configure Protractor and the Selenium WebServer. These are already specified as npm dependencies within `package.json`. Simply run these terminal commands:
 
 ```console
 npm install -g live-server
@@ -99,8 +65,7 @@ npm update
 webdriver-manager update
 ```
 
-Your can read more details about Protractor and e2e here: http://angular.github.io/protractor/#/
-for more details on Protractor.
+Your can read more details about Protractor and e2e here: http://angular.github.io/protractor/#/ for more details on Protractor.
 
  1. Start your local HTTP Webserver: `live-server` or `http-server`.
 
@@ -136,7 +101,6 @@ npm test
 app/                    --> all of the source files for the application
   assets/app.css        --> default stylesheet
   src/           --> all app specific modules
-     users/              --> package for user features
   index.html            --> app layout file (the main html template file of the app)
 karma.conf.js         --> config file for running unit tests with Karma
 e2e-tests/            --> end-to-end tests
@@ -144,58 +108,7 @@ e2e-tests/            --> end-to-end tests
   scenarios.js          --> end-to-end scenarios to be run by Protractor
 ```
 
-## Updating Angular
-
-Previously we recommended that you merge in changes to angular-seed into your own fork of the
-project. Now that the AngularJS framework library code and tools are acquired through package managers
-(npm and bower) you can use these tools instead to update the dependencies.
-
-You can update the tool dependencies by running:
-
-```
-npm update
-```
-
-This will find the latest versions that match the version ranges specified in the `package.json` file.
-
-You can update the Angular dependencies by running:
-
-```
-bower update
-```
-
-This will find the latest versions that match the version ranges specified in the `bower.json` file.
-
-
-## Serving the Application Files
-
-While AngularJS is client-side-only technology and it's possible to create AngularJS webapps that
-don't require a backend server at all, we recommend serving the project files using a local
-web server during development to avoid issues with security restrictions (sandbox) in browsers. The
-sandbox implementation varies between browsers, but quite often prevents things like cookies, xhr,
-etc to function properly when an html page is opened via `file://` scheme instead of `http://`.
-
-### Running the App during Development
-
-The angular-seed project comes pre-configured with a local development web server.  It is a node.js
-tool called [http-server][http-server].  You can install http-server globally:
-
-```
-npm install -g live-server
-```
-
-Then you can start your own development web server to serve static files from a folder by running:
-
-```
-cd app
-live-server
-```
-
-Alternatively, you can choose to configure your own webserver, such as apache or nginx. Just
-configure your server to serve the files under the `app/` directory.
-
-
-## Contact
+## Technology Links
 
 For more information on AngularJS please check out http://angularjs.org/
 For more information on Angular Material, check out https://material.angularjs.org/
@@ -212,8 +125,8 @@ For more information on Angular Material, check out https://material.angularjs.o
 
 ## Credits
 
-This app was derived from the base app at <a href="https://github.com/angular/material-start" target="_blank">angular/material-start</a>, and derives a lot of its code from it. The primary target of this app is to enhance the UI to match the Material Design specification.
+This starter kit is built upon the original starter app provided by <code>angular/material-start</code> located at <a href="https://github.com/angular/material-start" target="_blank">angular/material-start</a>. The primary target of this seed app is to enhance the UI to match the Material Design specification.
 
 ## Background
 
-**Angular Material Template** is being developed by [@ritenv](http://twitter.com/@ritenv) as a hobby project. If you have any ideas, suggestions or things you'd like to see in this app, PM me directly at [@ritenv](http://twitter.com/@ritenv).
+**Angular Material Seed** is being developed by [@ritenv](http://twitter.com/@ritenv) as a hobby project. If you have any ideas, suggestions or things you'd like to see in this app, PM me directly at [@ritenv](http://twitter.com/@ritenv).

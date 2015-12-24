@@ -1,8 +1,8 @@
 {
-  "name": "angular-material-template",
+  "name": "angular-material-seed",
   "description": "A starter project for AngularJS Material Design",
   "version": "0.0.1",
-  "homepage": "https://github.com/ritenv/angular-material-template",
+  "homepage": "https://github.com/ritenv/angular-material-seed",
   "license": "MIT",
   "private": true,
   "dependencies": {
