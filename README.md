@@ -1,6 +1,6 @@
 # Angular Material Seed
 
-This Material **start*** project is a *seed* for AngularJS Material applications. 
+This project is a *seed* for AngularJS Material Design applications. 
 
 The project contains a sample AngularJS application built on Google's Material Design specification, and is preset to install the AngularJS framework and a bunch of development and testing tools for instant web development gratification.
 
